@@ -1,6 +1,6 @@
 {
   "name": "background-server-action",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Github Action to run a command while running a server in the background",
   "main": "index.js",
   "scripts": {
