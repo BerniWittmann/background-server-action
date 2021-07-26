@@ -1,13 +1,31 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Background Server'
+description: 'Spin up a server in the background for tests and other stuff'
+author: 'Bernhard Wittmann'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  command:
+    description: 'Main command to run'
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The message to output'
+  command-windows:
+    description: 'Main command to run on Windows'
+    required: true
+  build:
+    description: 'Command to run in build step before starting main command'
+    required: false
+  start:
+    description: 'Command for starting local server in the background'
+    required: false
+  start-windows:
+    description: 'A different start command on Windows'
+    required: false
+  wait-on:
+    description: 'Local server URL to wait for'
+    required: false
+  wait-on-timeout:
+    description: 'Amount of time to wait for wait-on url to be available'
+    required: false
 runs:
   using: 'node12'
   main: 'dist/index.js'
+branding:
+  color: 'purple'
+  icon: 'server'
