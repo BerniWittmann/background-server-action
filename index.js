@@ -71,13 +71,13 @@ async function run() {
   } main commands ${separateCommands.join(', ')}`
   )
 
-  return separateCommands.map((command) => {
+  return Promise.all(separateCommands.map(async (command) => {
     return execCommand(
       command,
       true,
       `run command "${command}"`
     )
-  })
+  }))
 }
 
 const buildAppMaybe = () => {
