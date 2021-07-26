@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 const core = require('@actions/core')
 const got = require('got')
-const debug = require('debug')('@cypress/github-action')
+const debug = require('debug')('background-server-action')
 
 /**
  * A small utility for checking when an URL responds, kind of
