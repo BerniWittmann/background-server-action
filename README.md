@@ -23,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run E2E Tests
-        uses: BerniWittmann/background-server-action@v1.0.2
+        uses: BerniWittmann/background-server-action@v1.0.3
         with:
           command: npm run tests
           start: npm start
@@ -43,7 +43,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run E2E Tests
-        uses: BerniWittmann/background-server-action@v1.0.2
+        uses: BerniWittmann/background-server-action@v1.0.3
         with:
           command: npm run tests
           build: npm run build
@@ -64,7 +64,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run E2E Tests
-        uses: BerniWittmann/background-server-action@v1.0.2
+        uses: BerniWittmann/background-server-action@v1.0.3
         with:
           command: npm run generate-docs, npm run tests
           build: npm run build
@@ -85,7 +85,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run E2E Tests
-        uses: BerniWittmann/background-server-action@v1.0.2
+        uses: BerniWittmann/background-server-action@v1.0.3
         with:
           command: npm run tests
           command-windows: npm run tests:windows
@@ -108,7 +108,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run E2E Tests
-        uses: BerniWittmann/background-server-action@v1.0.2
+        uses: BerniWittmann/background-server-action@v1.0.3
         with:
           command: npm run tests
           build: npm run build
@@ -120,7 +120,7 @@ jobs:
 By default, wait-on will retry for 60 seconds. You can pass a custom timeout in seconds using wait-on-timeout.
 
 ```
-- uses: BerniWittmann/background-server-action@v1.0.2
+- uses: BerniWittmann/background-server-action@v1.0.3
     with:
       command: npm run tests
       build: npm run build
@@ -133,7 +133,7 @@ By default, wait-on will retry for 60 seconds. You can pass a custom timeout in 
 You can wait for multiple URLs to respond by separating urls with a comma
 
 ```
-- uses: BerniWittmann/background-server-action@v1.0.2
+- uses: BerniWittmann/background-server-action@v1.0.3
     with:
       command: npm run tests
       build: npm run build

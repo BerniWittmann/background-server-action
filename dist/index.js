@@ -81,8 +81,8 @@ async function run() {
   return separateCommands.map((command) => {
     return execCommand(
       command,
-      false,
-      `run command "${command}`
+      true,
+      `run command "${command}"`
     )
   })
 }
@@ -128,7 +128,7 @@ const startServersMaybe = () => {
     return execCommand(
       startCommand,
       false,
-      `start server "${startCommand}`
+      `start server "${startCommand}"`
     )
   })
 }
