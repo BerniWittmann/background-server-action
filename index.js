@@ -83,7 +83,7 @@ async function run() {
 const buildAppMaybe = () => {
   const buildApp = core.getInput('build')
   if (!buildApp) {
-    return
+    return Promise.resolve()
   }
 
   debug(`building application using "${buildApp}"`)
