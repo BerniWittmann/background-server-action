@@ -23,6 +23,9 @@ inputs:
   wait-on-timeout:
     description: 'Amount of time to wait for wait-on url to be available'
     required: false
+  cwd:
+    description: 'Current working directory'
+    required: false
 runs:
   using: 'node12'
   main: 'dist/index.js'
