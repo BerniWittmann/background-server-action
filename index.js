@@ -38,7 +38,9 @@ const isUrl = (s) => /^https?:\/\//.test(s)
     const promise = exec.exec(
       quote(toolPath),
       toolArguments,
-      {}
+      { 
+        cwd: core.getInput('cwd')
+      }
     )
     if (waitToFinish) {
       return promise
