@@ -8,7 +8,9 @@ jobs:
   units:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+      with:
+          node-version: 16
     - run: npm ci
     - run: npm test
 
@@ -16,9 +18,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+      with:
+          node-version: 16
     - uses: ./
       with:
         command: echo "Test file" >> test.txt && cat ./test.txt
         build: sleep 1
-        milliseconds: 1000
