@@ -159,7 +159,7 @@ const startServersMaybe = () => {
 const waitOnMaybe = () => {
   const waitOn = core.getInput('wait-on')
   if (!waitOn) {
-    return
+    return Promise.resolve();
   }
 
   const waitOnTimeout = core.getInput('wait-on-timeout') || '60'
