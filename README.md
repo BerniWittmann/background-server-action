@@ -13,7 +13,7 @@ GitHub Action to run a command (e.g. a test) while also running another command 
 
 Run a node js server in the background while executing tests
 
-```
+```yaml
 name: Run Tests
 on: [push]
 jobs:
@@ -23,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run E2E Tests
-        uses: BerniWittmann/background-server-action@latest
+        uses: BerniWittmann/background-server-action@v1
         with:
           command: npm run tests
           start: npm start
@@ -33,7 +33,7 @@ jobs:
 
 You can also specify a build command before
 
-```
+```yaml
 name: Run Tests
 on: [push]
 jobs:
@@ -43,7 +43,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run E2E Tests
-        uses: BerniWittmann/background-server-action@latest
+        uses: BerniWittmann/background-server-action@v1
         with:
           command: npm run tests
           build: npm run build
@@ -54,7 +54,7 @@ jobs:
 
 You can also specify a build command before
 
-```
+```yaml
 name: Run Tests
 on: [push]
 jobs:
@@ -64,7 +64,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run E2E Tests
-        uses: BerniWittmann/background-server-action@latest
+        uses: BerniWittmann/background-server-action@v1
         with:
           command: npm run generate-docs, npm run tests
           build: npm run build
@@ -75,7 +75,7 @@ jobs:
 
 Sometimes on Windows you need to run a different start command. You can use `start-windows` and `command-windows` parameter for this, which takes precedence over the normal commands when on Windows.
 
-```
+```yaml
 name: Run Tests
 on: [push]
 jobs:
@@ -85,7 +85,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run E2E Tests
-        uses: BerniWittmann/background-server-action@latest
+        uses: BerniWittmann/background-server-action@v1
         with:
           command: npm run tests
           command-windows: npm run tests:windows
@@ -98,7 +98,7 @@ jobs:
 
 If you want to set a specific directory where your commands are run, you can specify the path via the cwd option
 
-```
+```yaml
 name: Run Tests
 on: [push]
 jobs:
@@ -108,7 +108,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run E2E Tests
-        uses: BerniWittmann/background-server-action@latest
+        uses: BerniWittmann/background-server-action@v1
         with:
           cwd: ./packages/example
           build: npm run build
@@ -119,7 +119,7 @@ jobs:
 
 If you are starting a local server and it takes a while to start, you can add a parameter `wait-on` and pass url to wait for the server to respond.
 
-```
+```yaml
 name: Run Tests
 on: [push]
 jobs:
@@ -129,7 +129,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run E2E Tests
-        uses: BerniWittmann/background-server-action@latest
+        uses: BerniWittmann/background-server-action@v1
         with:
           command: npm run tests
           build: npm run build
@@ -140,8 +140,8 @@ jobs:
 
 By default, wait-on will retry for 60 seconds. You can pass a custom timeout in seconds using wait-on-timeout.
 
-```
-- uses: BerniWittmann/background-server-action@latest
+```yaml
+- uses: BerniWittmann/background-server-action@v1
     with:
       command: npm run tests
       build: npm run build
@@ -153,8 +153,8 @@ By default, wait-on will retry for 60 seconds. You can pass a custom timeout in 
 
 You can wait for multiple URLs to respond by separating urls with a comma
 
-```
-- uses: BerniWittmann/background-server-action@latest
+```yaml
+- uses: BerniWittmann/background-server-action@v1
     with:
       command: npm run tests
       build: npm run build
