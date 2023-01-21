@@ -23,5 +23,5 @@ jobs:
           node-version: 16
     - uses: ./
       with:
-        command: echo "Test file" >> test.txt && cat ./test.txt
-        build: sleep 1
+        command: cat ./test.txt
+        build: echo "test-file-content" > ./test.txt && ls

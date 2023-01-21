@@ -27,11 +27,8 @@
   "dependencies": {
     "@actions/core": "^1.2.5",
     "@actions/exec": "^1.1.0",
-    "@actions/io": "^1.1.1",
-    "argument-vector": "^1.0.2",
     "debug": "^4.3.2",
-    "got": "^11.8.2",
-    "quote": "^0.4.0"
+    "got": "^11.8.2"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.27.0",

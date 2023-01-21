@@ -1,10 +1,7 @@
 const core = require('@actions/core');
 const exec = require('@actions/exec');
-const io = require('@actions/io');
 const os = require('os')
 const debug = require('debug')('background-server-action');
-const cliParser = require('argument-vector')();
-const quote = require('quote');
 
 const { ping } = require('./src/ping')
 
@@ -23,27 +20,11 @@ const isUrl = (s) => /^https?:\/\//.test(s)
 ) => {
   console.log('%s command "%s"', label, fullCommand)
 
-  const args = cliParser.parse(fullCommand)
-  debug(`parsed command: ${args.join(' ')}`)
+  const promise = exec.exec('bash', ['-c', fullCommand], {});
 
-  return io.which(args[0], true).then((toolPath) => {
-    debug(`found command "${toolPath}"`)
-    debug(`with arguments ${args.slice(1).join(' ')}`)
-
-    const toolArguments = args.slice(1)
-    const argsString = toolArguments.join(' ')
-    debug(`running ${quote(toolPath)} ${argsString}`)
-    debug(`waiting for the command to finish? ${waitToFinish}`)
-
-    const promise = exec.exec(
-      quote(toolPath),
-      toolArguments,
-      {}
-    )
-    if (waitToFinish) {
-      return promise
-    }
-  })
+  if (waitToFinish) {
+    return promise
+  }
 }
 
 
