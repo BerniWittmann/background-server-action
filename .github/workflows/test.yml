@@ -22,4 +22,6 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ./
       with:
+        command: echo "Test file" >> test.txt && cat ./test.txt
+        build: sleep 1
         milliseconds: 1000
