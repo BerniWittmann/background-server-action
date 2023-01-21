@@ -24,7 +24,7 @@ inputs:
     description: 'Amount of time to wait for wait-on url to be available'
     required: false
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
 branding:
   color: 'purple'
