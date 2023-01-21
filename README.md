@@ -94,6 +94,27 @@ jobs:
           start-windows: npm run start:windows
 ```
 
+### Current working directory
+
+If you want to set a specific directory where your commands are run, you can specify the path via the cwd option
+
+```
+name: Run Tests
+on: [push]
+jobs:
+  run-test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run E2E Tests
+        uses: BerniWittmann/background-server-action@latest
+        with:
+          cwd: ./packages/example
+          build: npm run build
+          start: npm run start
+```
+
 ### Wait for server
 
 If you are starting a local server and it takes a while to start, you can add a parameter `wait-on` and pass url to wait for the server to respond.

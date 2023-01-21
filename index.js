@@ -20,7 +20,7 @@ const isUrl = (s) => /^https?:\/\//.test(s)
 ) => {
   console.log('%s command "%s"', label, fullCommand)
 
-  const promise = exec.exec('bash', ['-c', fullCommand], {});
+  const promise = exec.exec('bash', ['-c', fullCommand], { cwd: core.getInput('cwd') });
 
   if (waitToFinish) {
     return promise
