@@ -25,4 +25,5 @@ jobs:
       with:
         cwd: './src'
         command: cat ./test.txt
-        build: echo "test-file-content" > ./test.txt && ls
+        start: ls
+        build: echo "test-file-content" > ./test.txt
