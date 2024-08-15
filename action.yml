@@ -27,7 +27,7 @@ inputs:
     description: 'Current working directory'
     required: false
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
 branding:
   color: 'purple'
